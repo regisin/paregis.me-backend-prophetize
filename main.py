@@ -81,7 +81,7 @@ class StockOut(StockIn):
         }
 
 
-@app.get("/ping"):
+@app.get("/ping")
 def ping():
     return {"ping":"pong"}
 
