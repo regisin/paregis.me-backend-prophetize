@@ -81,6 +81,11 @@ class StockOut(StockIn):
         }
 
 
+@app.get("/ping"):
+def ping():
+    return {"ping":"pong"}
+
+
 @app.post("/prophetize", response_model=StockOut, status_code=200)
 async def prophetize(payload: StockIn):
     requested_at = datetime.now()
@@ -108,8 +113,6 @@ async def prophetize(payload: StockIn):
 
     future = model.make_future_dataframe(periods=periods)
     forecast = model.predict(future)
-
-    print(forecast[['ds', 'yhat']])
 
     return {
             "symbol": "MSFT",
