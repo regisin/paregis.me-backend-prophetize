@@ -9,5 +9,6 @@ API that runs prophet() on stock data and returns prediction results.
 
 ```bash
 deta new --python prophetize
-
+cd prophetize
+deta deploy
 ```
